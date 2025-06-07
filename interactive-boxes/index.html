@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Boxes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Bundle & Save</h1>
+
+        <!-- Box 1 -->
+        <div class="interactive-box" id="box1">
+            <div class="box-header">
+                <input type="radio" name="bundle" id="bundle1" value="1" checked>
+                <label for="bundle1">1 Pair</label>
+                <span class="price">DKK 195.00</span>
+                <span class="discount">50% OFF</span>
+            </div>
+            <div class="box-content">
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color1-1">Color</label>
+                        <select id="color1-1">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size1-1">Size</label>
+                        <select id="size1-1">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 2 - Most Popular -->
+        <div class="interactive-box most-popular" id="box2">
+            <div class="most-popular-label">Most Popular</div>
+            <div class="box-header">
+                <input type="radio" name="bundle" id="bundle2" value="2">
+                <label for="bundle2">2 Pair</label>
+                <span class="price">DKK 345.00</span>
+                <span class="original-price">DKK 195.00</span>
+                <span class="discount">45% OFF</span>
+            </div>
+            <div class="box-content">
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color2-1">Color</label>
+                        <select id="color2-1">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size2-1">Size</label>
+                        <select id="size2-1">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color2-2">Color</label>
+                        <select id="color2-2">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size2-2">Size</label>
+                        <select id="size2-2">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="interactive-box" id="box3">
+            <div class="box-header">
+                <input type="radio" name="bundle" id="bundle3" value="3">
+                <label for="bundle3">3 Pair</label>
+                <span class="price">DKK 528.00</span>
+                <span class="discount">60% OFF</span>
+            </div>
+            <div class="box-content">
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color3-1">Color</label>
+                        <select id="color3-1">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size3-1">Size</label>
+                        <select id="size3-1">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color3-2">Color</label>
+                        <select id="color3-2">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size3-2">Size</label>
+                        <select id="size3-2">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="option-group">
+                        <label for="color3-3">Color</label>
+                        <select id="color3-3">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="size3-3">Size</label>
+                        <select id="size3-3">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-footer">
+            <p>Free 2 Day Shipping</p>
+            <p>Total: <span class="total-price">DKK 360.00</span></p>
+        </div>
+
+        <button class="add-to-cart-btn">
+            + Add to Cart
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

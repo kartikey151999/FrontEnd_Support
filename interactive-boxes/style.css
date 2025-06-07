@@ -1,0 +1,280 @@
+/* Basic reset and typography */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top, then content pushes down */
+    min-height: 100vh; /* Minimum height for full viewport */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin-top: 50px; /* Space from the top */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* Interactive Box Styling */
+.interactive-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide overflowing content initially */
+    transition: all 0.3s ease-out; /* Smooth transition for expansion */
+    position: relative; /* For most-popular label positioning */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.interactive-box.active {
+    border-color: #007bff; /* Highlight active box */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.interactive-box.active .box-header {
+    border-bottom: none; /* No border when expanded, for seamless look */
+}
+
+.box-header input[type="radio"] {
+    margin-right: 15px;
+    accent-color: #007bff; /* Custom color for radio button */
+    transform: scale(1.2); /* Slightly larger radio button */
+}
+
+.box-header label {
+    flex-grow: 1; /* Take available space */
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.box-header .price {
+    font-weight: 700;
+    color: #007bff;
+    font-size: 1.1em;
+    margin-left: auto; /* Push price to the right */
+}
+
+.box-header .original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.box-header .discount {
+    background-color: #e0f2f7; /* Light blue background */
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.85em;
+    margin-left: 15px;
+}
+
+/* Most Popular Box Specifics */
+.most-popular {
+    margin-top: 40px; /* Space for the "Most Popular" label */
+}
+
+.most-popular-label {
+    position: absolute;
+    top: -15px; /* Position above the box */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Green background */
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    z-index: 10; /* Ensure it's above the box */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Box Content (Initially hidden) */
+.box-content {
+    max-height: 0; /* Hidden by default */
+    opacity: 0; /* Fade out effect */
+    visibility: hidden; /* Hide from screen readers when collapsed */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    padding: 0 20px; /* Padding for the options */
+}
+
+.interactive-box.active .box-content {
+    max-height: 200px; /* Or a value large enough to contain all content */
+    opacity: 1;
+    visibility: visible;
+    padding: 15px 20px; /* Adjust padding when visible */
+}
+
+.box-content .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee; /* Separator for multiple options within a box */
+}
+
+.box-content .options:last-child {
+    margin-bottom: 0;
+    border-bottom: none; /* No border for the last option group */
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Roughly half width for two columns */
+}
+
+.option-group label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.option-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fdfdfd;
+    -webkit-appearance: none; /* Remove default arrow on select */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.2c-7.6%200-13.6%204.8-13.6%2012.8%200%204.8%202.8%209.6%207.6%2012.8l128%20127.9c5.2%205.2%2013.2%205.2%2018.4%200l128-127.9c4.8-3.2%207.6-8%207.6-12.8%200-8-6-12.8-13.6-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+
+/* Summary Footer */
+.summary-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.summary-footer p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.summary-footer .total-price {
+    font-weight: 700;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0); /* Press effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .box-header {
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        padding: 10px 15px;
+    }
+
+    .box-header label,
+    .box-header .price,
+    .box-header .original-price,
+    .box-header .discount {
+        font-size: 0.9em;
+        margin-left: 0; /* Reset margin */
+        width: 100%; /* Take full width */
+        text-align: left;
+    }
+
+    .box-header .price {
+        order: -1; /* Move price to the top in wrapped layout */
+        text-align: right;
+        margin-bottom: 5px;
+    }
+
+    .box-header .discount {
+        width: auto; /* Let discount fit its content */
+        margin-top: 5px;
+    }
+
+    .box-content .options {
+        flex-direction: column; /* Stack color/size options vertically */
+        align-items: flex-start;
+    }
+
+    .option-group {
+        width: 100%; /* Full width for stacked options */
+        margin-bottom: 10px;
+    }
+
+    .summary-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summary-footer p {
+        margin-bottom: 5px;
+    }
+}
